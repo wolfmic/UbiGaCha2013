@@ -7,6 +7,8 @@ public class MenuScript : MonoBehaviour {
 	private List<GameObject> _menuEntries;
 	private int _menuIndex;
 
+	public bool Enabled = true;
+
 	// Use this for initialization
 	void Start () {
 		_menuIndex = 0;
@@ -21,6 +23,10 @@ public class MenuScript : MonoBehaviour {
 	void Update () {
 		bool updateCursor = false;
 
+		// be sure we're enabled
+		if (this.Enabled == false) {
+				return;
+		}
 		// process input
 		if (Input.GetKeyDown ("down")) {
 			updateCursor = true;
@@ -30,14 +36,21 @@ public class MenuScript : MonoBehaviour {
 			updateCursor = true;
 			_menuIndex = System.Math.Max(0, _menuIndex - 1);
 		}
+		if (Input.GetKeyDown("space")) {
+			MonoBehaviour obj;
+
+			obj = _menuEntries[_menuIndex].GetComponent<CreditsScript>();
+			if (obj != null) {
+				obj.SendMessage("Activate");
+			}
+		}
 		// move cursor if needed
 		if (updateCursor) {
 			this.UpdateCursor();
 		}
 	}
 
-	void UpdateCursor()
-	{
+	void UpdateCursor() {
 		_cursor.transform.position = _menuEntries[_menuIndex].transform.position;
 	}
 }
