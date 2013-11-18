@@ -26,13 +26,11 @@ public class CreditsScript : MonoBehaviour {
 		if (_running == false)
 			return;
 		_creditsSprite.transform.Translate(Vector2.up * SCROLL_SPEED * Time.deltaTime);
-		Debug.Log (_creditsSprite.transform.position);
 		if (_creditsSprite.transform.position.y > (_creditsSprite.renderer.bounds.size.y / 2f + 0.5)) {
 			_running = false;
 			_creditsSprite.transform.position = _initialCreditsPosition;
 			_menuEntries.transform.position = _initialMenuEntriesPosition;
 		}
-		// TODO: _running = false && restore camera
 	}
 
 	void Activate() {

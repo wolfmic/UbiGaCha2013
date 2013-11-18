@@ -40,6 +40,10 @@ public class MenuScript : MonoBehaviour {
 			MonoBehaviour obj;
 
 			obj = _menuEntries[_menuIndex].GetComponent<CreditsScript>();
+			if (obj == null)
+				obj = _menuEntries[_menuIndex].GetComponent<ExitScript>();
+			if (obj == null)
+				obj = _menuEntries[_menuIndex].GetComponent<StartScript>();
 			if (obj != null) {
 				obj.SendMessage("Activate");
 			}
