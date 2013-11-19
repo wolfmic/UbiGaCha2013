@@ -6,20 +6,23 @@ public class PlayerControl : MonoBehaviour {
 
     public float velocity = 12.0f, velocity_max = 12.0f;
     public int level = 5;
-    int range_detection = 5, bell_range = 15;
-    public int floor = 1;
+    public float range_detection = 0.5f, bell_range = 1.5f;
+    public int floor = 0;
 
+    public float startX = 0.0f, startY = 0.0f;
     private Vector3 direction = Vector3.zero;
     public bool onFloor = true;
     private bool onStairs = false;
     private GameObject[] floors;
+    private GameObject world;
 
     private bool freeze = false;
     public bool levelClear = false;
-    private int rank = 0;
+  
 	// Use this for initialization
 	void Start () {
-        this.transform.position = new Vector3(1.119886f , 0.08295452f, 0.0f);
+        this.transform.position = new Vector3(this.startX, this.startY, 0.0f);
+        this.world = GameObject.FindGameObjectWithTag("World");
 	}
 	
 	// Update is called once per frame
@@ -39,21 +42,14 @@ public class PlayerControl : MonoBehaviour {
             this.transform.Translate(Input.GetAxis("Vertical") * direction * velocity / 126 * Time.deltaTime);
         }
 
-
-        if (Input.GetKeyUp("up"))
-            this.level++;
-
-        if (Input.GetKeyUp("down"))
-            this.level--;
-
-        if (Input.GetKeyUp("space"))
-            UseBell();
+        if (Input.GetButtonDown("Fire1"))
+            UseBellSkill();
 	}
 
     void UpdateSpeed()
     {
         GameObject[] enemies = GameObject.FindGameObjectsWithTag("Enemies");
-        
+
         for(int i=0; i < enemies.Length; i++)
         {
             if(IsInRange(enemies[i]) && !enemies[i].GetComponent<AgentBehavior>().isRanged && enemies[i].GetComponent<AgentBehavior>().floor == this.floor)
@@ -64,7 +60,7 @@ public class PlayerControl : MonoBehaviour {
                     this.velocity = 0;
             }
 
-            if(!IsInRange(enemies[i]) && enemies[i].GetComponent<AgentBehavior>().isRanged)
+            if(enemies[i] != null && !IsInRange(enemies[i]) && enemies[i].GetComponent<AgentBehavior>().isRanged)
             {
                 enemies[i].GetComponent<AgentBehavior>().setIsRange();
                 this.velocity += this.velocity_max * enemies[i].GetComponent<AgentBehavior>().coeff_reduc;
@@ -90,12 +86,18 @@ public class PlayerControl : MonoBehaviour {
             onFloor = true;
             floors = GameObject.FindGameObjectsWithTag("Floor");
 
-            for(int i= 0; i< floors.Length; i++)
+            Debug.Log(floors.Length);
+            for (int i = 0; i < floors.Length; i++ )
             {
-                Debug.Log(floors[i].rigidbody2D.GetInstanceID() == other.rigidbody2D.GetInstanceID());
-                if (floors[i].rigidbody2D.GetInstanceID() == other.rigidbody2D.GetInstanceID())
-                    floor = i;
+                Debug.Log(i + " : ID = " + floors[i].GetInstanceID());
             }
+
+                for (int i = 0; i < floors.Length; i++)
+                {
+                    Debug.Log(floors[i].rigidbody2D.GetInstanceID() == other.rigidbody2D.GetInstanceID());
+                    if (floors[i].rigidbody2D.GetInstanceID() == other.rigidbody2D.GetInstanceID())
+                        floor = i;
+                }
         }
     }
 
@@ -120,7 +122,7 @@ public class PlayerControl : MonoBehaviour {
             return false;
     }
 
-    bool IsInBellRange(GameObject enemy)
+    bool IsInBellSkillRange(GameObject enemy)
     {
         if (Math.Abs(enemy.transform.position.x - this.transform.position.x) <= bell_range)
             return true;
@@ -128,18 +130,49 @@ public class PlayerControl : MonoBehaviour {
             return false;
     }
 
-    void UseBell()
+    void UseBellSkill()
     {
         GameObject[] enemies = GameObject.FindGameObjectsWithTag("Enemies");
-        
-        for(int i = 0; i < enemies.Length; i++)
+
+        for (int i = 0; i< world.GetComponent<GameVariables>().getNbrMax(); i++)
         {
-            if (IsInBellRange(enemies[i]) && enemies[i].GetComponent<AgentBehavior>().floor == this.floor && !enemies[i].GetComponent<AgentBehavior>().jump)
+            if (IsInBellSkillRange(enemies[i]) && enemies[i].GetComponent<AgentBehavior>().floor == this.floor && !enemies[i].GetComponent<AgentBehavior>().jump)
             {
                 float coeff = 15 - Math.Abs(enemies[i].transform.position.x - this.transform.position.x);
-                enemies[i].GetComponent<AgentBehavior>().f_speed_jump += 1.5f * coeff;
+                enemies[i].GetComponent<AgentBehavior>().f_speed_jump += (1.5f * coeff)/10.0f;
                 enemies[i].GetComponent<AgentBehavior>().setJump();
             }
+        }
+    }
+
+    void SetFreeze(bool activation)
+    {
+        freeze = activation;
+    }
+
+    void SetLastBell(bool b)
+    {
+        if (b)
+        {
+            levelClear = true;
+            GameObject[] bells = GameObject.FindGameObjectsWithTag("Bell");
+            foreach (GameObject bell in bells)
+            {
+                bell.SendMessage("SetLevelClear");
+            }
+        }
+    }
+
+
+    void SetRank(int i)
+    {
+        if (level == i)
+        {
+            level++;
+        }
+        else
+        {
+            level = 0;
         }
     }
 }
