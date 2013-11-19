@@ -4,7 +4,7 @@ using System.Collections;
 public class StairsToScript : MonoBehaviour {
 
     public Vector3 dir;
-
+    public GameObject floorUp, floorDown;
 
 
     void Start() {
@@ -22,7 +22,12 @@ public class StairsToScript : MonoBehaviour {
 
         if (other.tag == "Player") {
             Debug.Log("SET DIRECTION");
-            other.GetComponent<Movements>().setDirection(dir);
+            other.GetComponent<PlayerControl>().setDirection(dir);
+        }
+
+        if(other.tag == "Enemies")
+        {
+            other.GetComponent<AgentBehavior>().setDirection(dir);
         }
 
         

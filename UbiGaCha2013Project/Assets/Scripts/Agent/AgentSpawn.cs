@@ -17,45 +17,32 @@ public class AgentSpawn : MonoBehaviour {
     {
         gameVariables = GameObject.Find("World");
         floors = GameObject.FindGameObjectsWithTag("Floor");
-        marks = GameObject.FindGameObjectsWithTag("Mark");
         numberOfObjects = gameVariables.GetComponent<GameVariables>().getNbrMax();
         nbrOfFloor = gameVariables.GetComponent<GameVariables>().getNbrFloor();
-        
-        for (int i = 0; i < nbrOfFloor; i++)
+
+        for (int i = 0; i < gameVariables.GetComponent<GameVariables>().getNbrFloor(); i++)
         {
-            for (int j = 0; j < marks.Length;j++ )
-            {
-                Debug.Log("Mark[" + j + "].y = " + marks[j].transform.position.y + " Floor[" + i + "].y" + floors[i].transform.position.y);
-                Debug.Log(Math.Abs(marks[j].transform.position.y - floors[i].transform.position.y) <= 0.001f);
+            if (floors[i].GetComponent<FloorClass>().spawnable == false)
+                nbrOfFloor--;
+        }
 
-                if(marks[j].transform.position.y == floors[i].transform.position.y ||
-                   Math.Abs(marks[j].transform.position.y - floors[i].transform.position.y) <= 0.001f)
-                {
-                    if (this.xMin == 0.0f)
-                        this.xMin = marks[j].transform.position.x;
-                    else
-                        this.xMax = marks[j].transform.position.x;
-                }
+        for (int i = 0; i < gameVariables.GetComponent<GameVariables>().getNbrFloor(); i++)
+        {
+            if (floors[i].GetComponent<FloorClass>().spawnable == false)
+                i++;
 
-                if(this.xMin > this.xMax)
-                {
-                    float temp = this.xMin;
-                    this.xMin = this.xMax;
-                    this.xMax = temp;
-                }
-
-                Debug.Log("Min = " + this.xMin + ", Max = " + this.xMax);
-                
-
-            }
+            this.xMax = floors[i].renderer.bounds.max.x;
+            this.xMin = floors[i].renderer.bounds.min.x;
 
             for (int j = 0; j < numberOfObjects / nbrOfFloor; ++j)
              {
-                    Vector3 pos = new Vector3(UnityEngine.Random.Range(this.xMin, this.xMax), floors[i].transform.position.y, 0.0f);
+                    Vector3 pos = new Vector3(UnityEngine.Random.Range(this.xMin, this.xMax), floors[i].renderer.bounds.max.y, 0.0f);
                     instance = Instantiate(CrowdAgent, pos, Quaternion.identity) as GameObject;
+                    instance.GetComponent<AgentBehavior>().transform.Translate(Vector3.up * instance.renderer.bounds.extents.y);
                     instance.GetComponent<AgentBehavior>().floor = i;
                     instance.GetComponent<AgentBehavior>().xMin = this.xMin;
                     instance.GetComponent<AgentBehavior>().xMax = this.xMax;
+                    instance.GetComponent<AgentBehavior>().yGround = floors[i].renderer.bounds.max.y + instance.renderer.bounds.extents.y;
 
              }
 
@@ -67,6 +54,41 @@ public class AgentSpawn : MonoBehaviour {
 	void Update () {
 	
 	}
+
+    public void Spawn(int nbr)
+    {
+        gameVariables = GameObject.Find("World");
+        floors = GameObject.FindGameObjectsWithTag("Floor");
+        nbrOfFloor = gameVariables.GetComponent<GameVariables>().getNbrFloor();
+
+        for (int i = 0; i < gameVariables.GetComponent<GameVariables>().getNbrFloor(); i++ )
+        {
+            if (floors[i].GetComponent<FloorClass>().spawnable == false)
+                nbrOfFloor--;
+        }
+
+            for (int i = 0; i < gameVariables.GetComponent<GameVariables>().getNbrFloor(); i++)
+            {
+                if (floors[i].GetComponent<FloorClass>().spawnable == false)
+                    i++;
+                this.xMax = floors[i].renderer.bounds.max.x;
+                this.xMin = floors[i].renderer.bounds.min.x;
+
+                for (int j = 0; j < nbr / nbrOfFloor; ++j)
+                {
+                    Vector3 pos = new Vector3(UnityEngine.Random.Range(this.xMin, this.xMax), floors[i].renderer.bounds.max.y, 0.0f);
+                    instance = Instantiate(CrowdAgent, pos, Quaternion.identity) as GameObject;
+                    instance.GetComponent<AgentBehavior>().transform.Translate(Vector3.up * instance.renderer.bounds.extents.y);
+                    instance.GetComponent<AgentBehavior>().floor = i;
+                    instance.GetComponent<AgentBehavior>().xMin = this.xMin;
+                    instance.GetComponent<AgentBehavior>().xMax = this.xMax;
+                    instance.GetComponent<AgentBehavior>().yGround = floors[i].renderer.bounds.max.y + instance.renderer.bounds.extents.y;
+
+                }
+
+                this.xMin = this.xMax = 0.0f;
+            }
+    }
 
   
 }
