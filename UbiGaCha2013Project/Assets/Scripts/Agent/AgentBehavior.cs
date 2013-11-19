@@ -3,7 +3,8 @@ using System.Collections;
 
 public class AgentBehavior : MonoBehaviour {
 
-	public float   f_speed, coeff_reduc, floor, velocity_y = 180, gravity = -3, f_speed_jump = 0.5f;
+	public float   f_speed, coeff_reduc, floor = 0, velocity_y = 50, gravity = -2, f_speed_jump = 15.0f;
+    public float xMax = 0.0f, xMin = 0.0f;
     GameObject player;
     public bool isRanged = false, isFreezed = false, jump = false;
     int dir = 0;
@@ -11,8 +12,8 @@ public class AgentBehavior : MonoBehaviour {
     
 	// Use this for initialization
 	void Start () {
-        f_speed = Random.Range(2.0f, 8.0f);
-        coeff_reduc = Random.Range(0.01f, 0.1f);
+        f_speed = Random.Range(0.001f, 0.08f);
+        coeff_reduc = Random.Range(0.001f, 0.01f);
 	}
 	
 	// Update is called once per frame
@@ -39,13 +40,13 @@ public class AgentBehavior : MonoBehaviour {
                 if (dir == 0)
                 {
                     this.transform.Translate(Vector3.right * Time.deltaTime * f_speed);
-                    if (this.transform.position.x > 47.5f)
+                    if (this.transform.position.x > xMax)
                         dir = 1;
                 }
                 else
                 {
                     this.transform.Translate(Vector3.left * Time.deltaTime * f_speed);
-                    if (this.transform.position.x < 0.0f)
+                    if (this.transform.position.x < xMin)
                         dir = 0;
                 }
             }
@@ -70,7 +71,7 @@ public class AgentBehavior : MonoBehaviour {
 
                 this.transform.position = new Vector3(this.transform.position.x, 5.0f + (floor * 9.0f), this.transform.position.z);
                 jump = false;
-                velocity_y = 30;
+                velocity_y = 50;
                 f_speed_jump = 15.0f;
                 StartCoroutine(freeze());
             }
