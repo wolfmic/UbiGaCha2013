@@ -23,7 +23,7 @@ TextureImporter:
   textureFormat: -1
   maxTextureSize: 1024
   textureSettings:
-    filterMode: -1
+    filterMode: 0
     aniso: 1
     mipBias: -1
     wrapMode: 1
@@ -44,28 +44,28 @@ TextureImporter:
     - name: MenuEntries_0
       rect:
         serializedVersion: 2
-        x: 3
-        y: 233
-        width: 76
-        height: 20
+        x: 1
+        y: 237
+        width: 57
+        height: 15
       alignment: 0
       pivot: {x: .5, y: .5}
     - name: MenuEntries_1
       rect:
         serializedVersion: 2
-        x: 2
-        y: 187
-        width: 108
-        height: 20
+        x: 1
+        y: 213
+        width: 81
+        height: 15
       alignment: 0
       pivot: {x: .5, y: .5}
     - name: MenuEntries_2
       rect:
         serializedVersion: 2
-        x: 2
-        y: 133
-        width: 60
-        height: 20
+        x: 1
+        y: 189
+        width: 45
+        height: 15
       alignment: 0
       pivot: {x: .5, y: .5}
   spritePackingTag: 
