@@ -3,15 +3,6 @@ using System.Collections;
 
 public class AnimatedTextureUV : MonoBehaviour
 {
-	public bool lastBell;
-	public int rank;
-	public float timerMax = 5;
-	public GameObject character;
-	private bool interactionPossible = false;
-	private bool running = false;
-	private bool levelClear = false;
-	public float timer;
-	
 	//vars for the whole sheet
 	public int colCount =  3;
 	public int rowCount =  3;
@@ -23,24 +14,24 @@ public class AnimatedTextureUV : MonoBehaviour
 	public int  fps     = 10;
 	//Maybe this should be a private var
 	private Vector2 offset;
+
+	// scale plan to sprite dimensions
+	void Start() {
+		Texture texture;
+		Vector3 scale = Vector3.one;
+
+		this.transform.Rotate (new Vector3 (90, 180, 0));
+		texture = this.renderer.material.GetTexture (0);
+		scale.x = rowCount / (float)texture.width;
+		scale.z = colCount / (float)texture.height;
+		this.transform.localScale = scale;
+	}
+
 	//Update
 	void Update () {
-		Interact();
-		RunAction ();
 		SetSpriteAnimation(colCount,rowCount,rowNumber,colNumber,totalCells,fps);
 	}
 
-	void SetAnimation(bool activation) {
-		if (activation)
-		{
-			totalCells = 3;
-		}
-		else
-		{
-			totalCells = 1;
-		}
-	}
-	
 	//SetSpriteAnimation
 	void SetSpriteAnimation(int colCount ,int rowCount ,int rowNumber ,int colNumber,int totalCells,int fps ){
 		
@@ -66,51 +57,5 @@ public class AnimatedTextureUV : MonoBehaviour
 		
 		renderer.material.SetTextureOffset ("_MainTex", offset);
 		renderer.material.SetTextureScale  ("_MainTex", size);
-	}
-
-	void RunAction() {
-		if (running)
-		{
-			timer -= Time.deltaTime;
-			if (timer <= 0)
-			{
-				running = false;
-				SetAnimation(false);
-				character.SendMessage("SetFreeze",false);
-			}
-		}
-	}
-	
-	void Interact() {
-		if ((interactionPossible) && (!levelClear))
-		{
-			if ((Input.GetKey(KeyCode.E)) && (!running))
-			{
-				timer = timerMax;
-				running = true;
-				SetAnimation(true);
-				character.SendMessage("SetFreeze",true);
-				character.SendMessage("SetRank",rank);
-				character.SendMessage("SetLastBell",lastBell);
-			}
-		}
-	}
-
-	void SetLevelClear() {
-		levelClear = true;
-	}
-
-	void OnTriggerEnter2D (Collider2D other) {
-		if (other == character.collider2D)
-		{
-			interactionPossible = true;
-		}
-	}
-	
-	void OnTriggerExit2D (Collider2D other) {
-		if (other == character.collider2D)
-		{
-			interactionPossible = false;
-		}
 	}
 }

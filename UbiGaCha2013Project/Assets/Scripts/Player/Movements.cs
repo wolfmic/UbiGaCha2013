@@ -3,6 +3,10 @@ using System.Collections;
 
 public class Movements : MonoBehaviour {
 
+	private bool freeze = false;
+	public bool levelClear = false;
+	private int rank = 0;
+
     public float velocity = 0.5f;
 
     private Vector3 direction = Vector3.zero;
@@ -52,6 +56,32 @@ public class Movements : MonoBehaviour {
         }
     }
 
-
+	void SetFreeze(bool activation) {
+		freeze = activation;
+	}
+	
+	void SetLastBell(bool b){
+		if (b)
+		{
+			levelClear = true;
+			GameObject[] bells = GameObject.FindGameObjectsWithTag("Bell");
+			foreach (GameObject bell in bells)
+			{
+				bell.SendMessage("SetLevelClear");
+			}
+		}
+	}
+	
+	
+	void SetRank(int i){
+		if (rank == i)
+		{
+			rank++;
+		}
+		else
+		{
+			rank = 0;
+		}
+	}
 
 }
