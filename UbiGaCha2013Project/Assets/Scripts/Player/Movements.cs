@@ -22,11 +22,11 @@ public class Movements : MonoBehaviour {
     // Update is called once per frame
     void Update() {
 
-        if (onFloor == true) {
+        if (onFloor && !freeze) {
             this.transform.Translate(Input.GetAxis("Horizontal") * -Vector3.left * velocity * Time.deltaTime);
         }
 
-        if (onStairs == true) {
+        if (onStairs && !freeze ) {
             
             this.transform.Translate(Input.GetAxis("Vertical") * direction * velocity / 126 * Time.deltaTime);
         }
