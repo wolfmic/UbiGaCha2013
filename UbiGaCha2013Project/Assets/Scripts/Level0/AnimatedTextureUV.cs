@@ -22,8 +22,8 @@ public class AnimatedTextureUV : MonoBehaviour
 
 		this.transform.Rotate (new Vector3 (90, 180, 0));
 		texture = this.renderer.material.GetTexture (0);
-		scale.x = rowCount / (float)texture.width;
-		scale.z = colCount / (float)texture.height;
+		scale.z = rowCount / (float)texture.width;
+		scale.x = colCount / (float)texture.height;
 		this.transform.localScale = scale;
 	}
 
