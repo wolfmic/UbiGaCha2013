@@ -8,17 +8,15 @@ public class CreditsScript : MonoBehaviour {
 
 	private bool _running = false;
 	private GameObject _creditsSprite;
-	private GameObject _menuEntries;
+	private GameObject _backgroundNoTitle;
 	private Vector3 _initialCreditsPosition;
-	private Vector3 _initialMenuEntriesPosition;
 
 	// Use this for initialization
 	void Start () {
 		_creditsSprite = GameObject.Find ("Credits");
-		_menuEntries = GameObject.Find ("MenuEntries");
+		_backgroundNoTitle = GameObject.Find("BackgroundNoTitle");
 
 		_initialCreditsPosition = _creditsSprite.transform.position;
-		_initialMenuEntriesPosition = _menuEntries.transform.position;
 	}
 	
 	// Update is called once per frame
@@ -27,14 +25,14 @@ public class CreditsScript : MonoBehaviour {
 			return;
 		_creditsSprite.transform.Translate(Vector2.up * SCROLL_SPEED * Time.deltaTime);
 		if (_creditsSprite.transform.position.y > (_creditsSprite.renderer.bounds.size.y / 2f + 1)) {
+			_backgroundNoTitle.renderer.sortingOrder = 0;
 			_running = false;
 			_creditsSprite.transform.position = _initialCreditsPosition;
-			_menuEntries.transform.position = _initialMenuEntriesPosition;
 		}
 	}
 
 	void Activate() {
 		_running = true;
-		_menuEntries.transform.Translate(Vector3.up * 10f);
+		_backgroundNoTitle.renderer.sortingOrder = 4;
 	}
 }
