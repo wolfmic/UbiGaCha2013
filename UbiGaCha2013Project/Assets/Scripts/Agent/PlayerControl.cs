@@ -4,14 +4,22 @@ using System;
 
 public class PlayerControl : MonoBehaviour {
 
-    public float f_speed = 12.0f, f_speedMax = 12.0f;
+    public float velocity = 12.0f, velocity_max = 12.0f;
     public int level = 5;
     int range_detection = 5, bell_range = 15;
     public int floor = 1;
 
+    private Vector3 direction = Vector3.zero;
+    public bool onFloor = true;
+    private bool onStairs = false;
+    private GameObject[] floors;
+
+    private bool freeze = false;
+    public bool levelClear = false;
+    private int rank = 0;
 	// Use this for initialization
 	void Start () {
-        this.transform.position = new Vector3(this.transform.position.x, 5.0f + (floor * 9.0f), this.transform.position.z);
+        this.transform.position = new Vector3(1.119886f , 0.08295452f, 0.0f);
 	}
 	
 	// Update is called once per frame
@@ -19,18 +27,18 @@ public class PlayerControl : MonoBehaviour {
 
         UpdateSpeed();
 
-	    if(Input.GetKey("right"))
+
+        if (onFloor == true)
         {
-            if (this.transform.position.x < 47.5f)
-                this.transform.Translate(Vector3.right * Time.deltaTime * f_speed);
-              
+            this.transform.Translate(Input.GetAxis("Horizontal") * -Vector3.left * velocity * Time.deltaTime);
         }
 
-        if (Input.GetKey("left"))
+        if (onStairs == true)
         {
-            if (this.transform.position.x > 0.0f)
-                this.transform.Translate(Vector3.left * Time.deltaTime * f_speed);
+
+            this.transform.Translate(Input.GetAxis("Vertical") * direction * velocity / 126 * Time.deltaTime);
         }
+
 
         if (Input.GetKeyUp("up"))
             this.level++;
@@ -51,18 +59,56 @@ public class PlayerControl : MonoBehaviour {
             if(IsInRange(enemies[i]) && !enemies[i].GetComponent<AgentBehavior>().isRanged && enemies[i].GetComponent<AgentBehavior>().floor == this.floor)
             {
                 enemies[i].GetComponent<AgentBehavior>().setIsRange();
-                this.f_speed -= this.f_speed * enemies[i].GetComponent<AgentBehavior>().coeff_reduc;
-                if (this.f_speed < 0)
-                    this.f_speed = 0;
+                this.velocity -= this.velocity * enemies[i].GetComponent<AgentBehavior>().coeff_reduc;
+                if (this.velocity < 0)
+                    this.velocity = 0;
             }
 
             if(!IsInRange(enemies[i]) && enemies[i].GetComponent<AgentBehavior>().isRanged)
             {
                 enemies[i].GetComponent<AgentBehavior>().setIsRange();
-                this.f_speed += this.f_speedMax * enemies[i].GetComponent<AgentBehavior>().coeff_reduc;
-                if (this.f_speed > this.f_speedMax)
-                    this.f_speed = this.f_speedMax;
+                this.velocity += this.velocity_max * enemies[i].GetComponent<AgentBehavior>().coeff_reduc;
+                if (this.velocity > this.velocity_max)
+                    this.velocity = this.velocity_max;
             }
+        }
+    }
+
+    public void setDirection(Vector3 dir)
+    {
+        direction = dir;
+    }
+
+    void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.tag == "Stairs")
+        {
+            onStairs = true;
+        }
+        if (other.tag == "Floor")
+        {
+            onFloor = true;
+            floors = GameObject.FindGameObjectsWithTag("Floor");
+
+            for(int i= 0; i< floors.Length; i++)
+            {
+                Debug.Log(floors[i].rigidbody2D.GetInstanceID() == other.rigidbody2D.GetInstanceID());
+                if (floors[i].rigidbody2D.GetInstanceID() == other.rigidbody2D.GetInstanceID())
+                    floor = i;
+            }
+        }
+    }
+
+    void OnTriggerExit2D(Collider2D other)
+    {
+        if (other.tag == "Stairs")
+        {
+            onStairs = false;
+        }
+        if (other.tag == "Floor")
+        {
+            onFloor = false;
+            floor = -1;
         }
     }
 

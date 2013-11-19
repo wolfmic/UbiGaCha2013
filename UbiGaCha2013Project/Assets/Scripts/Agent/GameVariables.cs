@@ -4,19 +4,23 @@ using System.Collections.Generic;
 
 public class GameVariables : MonoBehaviour {
 
-   public int maxNbrEnemies = 50;
+   public int maxNbrEnemies = 10;
    int currentNbrEnemies = 50;
    int toDelete = 0;
-   public int nbrFloor = 5;
+   int nbrFloor = 5;
    GameObject player;
-   GameObject[] enemies;
+   GameObject[] enemies, floors;
    public GameObject CrowdAgent, instance;
    
 
    public int getNbrMax() { return maxNbrEnemies; }
+   public int getNbrFloor() { return floors.Length; }
 
-
-   void Update()
+    void Start()
+   {
+       floors = GameObject.FindGameObjectsWithTag("Floor");
+   }
+  /* void Update()
    {
        player = GameObject.FindGameObjectWithTag("Player");
        enemies = GameObject.FindGameObjectsWithTag("Enemies");
@@ -27,7 +31,7 @@ public class GameVariables : MonoBehaviour {
        if (this.maxNbrEnemies > player.GetComponent<PlayerControl>().level * 10)
            DeleteEnemies();
 
-   }
+   }*/
 
     void DeleteEnemies()
    {
