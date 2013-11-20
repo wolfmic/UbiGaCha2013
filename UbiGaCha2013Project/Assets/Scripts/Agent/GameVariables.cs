@@ -6,6 +6,7 @@ public class GameVariables : MonoBehaviour {
 
    public int maxNbrEnemies = 10;
    int currentNbrEnemies = 10;
+   public int ratioLvlEnemies = 10;
    int toDelete = 0;
    int nbrFloor = 5;
    GameObject player;
@@ -31,10 +32,10 @@ public class GameVariables : MonoBehaviour {
        player = GameObject.FindGameObjectWithTag("Player");
        enemies = GameObject.FindGameObjectsWithTag("Enemies");
 
-       if (this.maxNbrEnemies < player.GetComponent<PlayerControl>().level * 10)
+       if (this.maxNbrEnemies < player.GetComponent<PlayerControl>().level * ratioLvlEnemies)
            AddEnemies();
 
-       if (this.maxNbrEnemies > player.GetComponent<PlayerControl>().level * 10)
+       if (this.maxNbrEnemies > player.GetComponent<PlayerControl>().level * ratioLvlEnemies)
            DeleteEnemies();
 
    }
@@ -46,7 +47,7 @@ public class GameVariables : MonoBehaviour {
        Camera mainCam = Camera.main;
        Plane[] planes = GeometryUtility.CalculateFrustumPlanes(mainCam);
 
-       int nbrDel =  maxNbrEnemies - player.GetComponent<PlayerControl>().level * 10;
+       int nbrDel = maxNbrEnemies - player.GetComponent<PlayerControl>().level * ratioLvlEnemies;
        int nbrPerFloor;
         int countDel;
  
@@ -82,7 +83,7 @@ public class GameVariables : MonoBehaviour {
             Destroy(enemies[toDelete[i]]);
         }
 
-        maxNbrEnemies = player.GetComponent<PlayerControl>().level * 10;
+        maxNbrEnemies = player.GetComponent<PlayerControl>().level * ratioLvlEnemies;
         GameObject[] pouet = GameObject.FindGameObjectsWithTag("Enemies");
         Debug.Log(pouet.Length);
 
@@ -90,11 +91,11 @@ public class GameVariables : MonoBehaviour {
 
     void AddEnemies()
     {
-        int nbrAdd = player.GetComponent<PlayerControl>().level * 10 - maxNbrEnemies;
+        int nbrAdd = player.GetComponent<PlayerControl>().level * ratioLvlEnemies - maxNbrEnemies;
         floors[player.GetComponent<PlayerControl>().floor].GetComponent<FloorClass>().spawnable = false;
         GameObject.FindGameObjectWithTag("World").GetComponent<AgentSpawn>().Spawn(nbrAdd);
-       
-        maxNbrEnemies = player.GetComponent<PlayerControl>().level * 10;
+
+        maxNbrEnemies = player.GetComponent<PlayerControl>().level * ratioLvlEnemies;
        
     }
 
