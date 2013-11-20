@@ -24,13 +24,13 @@ TextureImporter:
   maxTextureSize: 1024
   textureSettings:
     filterMode: 0
-    aniso: -1
+    aniso: 1
     mipBias: -1
-    wrapMode: -1
+    wrapMode: 1
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -40,6 +40,276 @@ TextureImporter:
   textureType: 8
   buildTargetSettings: []
   spriteSheet:
-    sprites: []
+    sprites:
+    - name: TempleDoorSpriteSheet_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 450
+        width: 53
+        height: 90
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: TempleDoorSpriteSheet_1
+      rect:
+        serializedVersion: 2
+        x: 53
+        y: 450
+        width: 53
+        height: 90
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: TempleDoorSpriteSheet_2
+      rect:
+        serializedVersion: 2
+        x: 106
+        y: 450
+        width: 53
+        height: 90
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: TempleDoorSpriteSheet_3
+      rect:
+        serializedVersion: 2
+        x: 159
+        y: 450
+        width: 53
+        height: 90
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: TempleDoorSpriteSheet_4
+      rect:
+        serializedVersion: 2
+        x: 212
+        y: 450
+        width: 53
+        height: 90
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: TempleDoorSpriteSheet_5
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 360
+        width: 53
+        height: 90
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: TempleDoorSpriteSheet_6
+      rect:
+        serializedVersion: 2
+        x: 53
+        y: 360
+        width: 53
+        height: 90
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: TempleDoorSpriteSheet_7
+      rect:
+        serializedVersion: 2
+        x: 106
+        y: 360
+        width: 53
+        height: 90
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: TempleDoorSpriteSheet_8
+      rect:
+        serializedVersion: 2
+        x: 159
+        y: 360
+        width: 53
+        height: 90
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: TempleDoorSpriteSheet_9
+      rect:
+        serializedVersion: 2
+        x: 212
+        y: 360
+        width: 53
+        height: 90
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: TempleDoorSpriteSheet_10
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 270
+        width: 53
+        height: 90
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: TempleDoorSpriteSheet_11
+      rect:
+        serializedVersion: 2
+        x: 53
+        y: 270
+        width: 53
+        height: 90
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: TempleDoorSpriteSheet_12
+      rect:
+        serializedVersion: 2
+        x: 106
+        y: 270
+        width: 53
+        height: 90
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: TempleDoorSpriteSheet_13
+      rect:
+        serializedVersion: 2
+        x: 159
+        y: 270
+        width: 53
+        height: 90
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: TempleDoorSpriteSheet_14
+      rect:
+        serializedVersion: 2
+        x: 212
+        y: 270
+        width: 53
+        height: 90
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: TempleDoorSpriteSheet_15
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 180
+        width: 53
+        height: 90
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: TempleDoorSpriteSheet_16
+      rect:
+        serializedVersion: 2
+        x: 53
+        y: 180
+        width: 53
+        height: 90
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: TempleDoorSpriteSheet_17
+      rect:
+        serializedVersion: 2
+        x: 106
+        y: 180
+        width: 53
+        height: 90
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: TempleDoorSpriteSheet_18
+      rect:
+        serializedVersion: 2
+        x: 159
+        y: 180
+        width: 53
+        height: 90
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: TempleDoorSpriteSheet_19
+      rect:
+        serializedVersion: 2
+        x: 212
+        y: 180
+        width: 53
+        height: 90
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: TempleDoorSpriteSheet_20
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 90
+        width: 53
+        height: 90
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: TempleDoorSpriteSheet_21
+      rect:
+        serializedVersion: 2
+        x: 53
+        y: 90
+        width: 53
+        height: 90
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: TempleDoorSpriteSheet_22
+      rect:
+        serializedVersion: 2
+        x: 106
+        y: 90
+        width: 53
+        height: 90
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: TempleDoorSpriteSheet_23
+      rect:
+        serializedVersion: 2
+        x: 159
+        y: 90
+        width: 53
+        height: 90
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: TempleDoorSpriteSheet_24
+      rect:
+        serializedVersion: 2
+        x: 212
+        y: 90
+        width: 53
+        height: 90
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: TempleDoorSpriteSheet_25
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 53
+        height: 90
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: TempleDoorSpriteSheet_26
+      rect:
+        serializedVersion: 2
+        x: 53
+        y: 0
+        width: 53
+        height: 90
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: TempleDoorSpriteSheet_27
+      rect:
+        serializedVersion: 2
+        x: 106
+        y: 0
+        width: 53
+        height: 90
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: TempleDoorSpriteSheet_28
+      rect:
+        serializedVersion: 2
+        x: 159
+        y: 0
+        width: 53
+        height: 90
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: TempleDoorSpriteSheet_29
+      rect:
+        serializedVersion: 2
+        x: 212
+        y: 0
+        width: 53
+        height: 90
+      alignment: 0
+      pivot: {x: 0, y: 0}
   spritePackingTag: 
   userData: 

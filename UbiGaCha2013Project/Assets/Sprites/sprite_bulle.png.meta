@@ -1,0 +1,360 @@
+fileFormatVersion: 2
+guid: 2f4075ab5bfe73648b939855b9a61c42
+TextureImporter:
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: .25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  seamlessCubemap: 0
+  textureFormat: -1
+  maxTextureSize: 1024
+  textureSettings:
+    filterMode: -1
+    aniso: 1
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: .5, y: .5}
+  spritePixelsToUnits: 100
+  alphaIsTransparency: 1
+  textureType: 8
+  buildTargetSettings: []
+  spriteSheet:
+    sprites:
+    - name: sprite_bulle_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 960
+        width: 256
+        height: 240
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: sprite_bulle_1
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 960
+        width: 256
+        height: 240
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: sprite_bulle_2
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 960
+        width: 256
+        height: 240
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: sprite_bulle_3
+      rect:
+        serializedVersion: 2
+        x: 768
+        y: 960
+        width: 256
+        height: 240
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: sprite_bulle_4
+      rect:
+        serializedVersion: 2
+        x: 1024
+        y: 960
+        width: 256
+        height: 240
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: sprite_bulle_5
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 720
+        width: 256
+        height: 240
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: sprite_bulle_6
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 720
+        width: 256
+        height: 240
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: sprite_bulle_7
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 720
+        width: 256
+        height: 240
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: sprite_bulle_8
+      rect:
+        serializedVersion: 2
+        x: 768
+        y: 720
+        width: 256
+        height: 240
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: sprite_bulle_9
+      rect:
+        serializedVersion: 2
+        x: 1024
+        y: 720
+        width: 256
+        height: 240
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: sprite_bulle_10
+      rect:
+        serializedVersion: 2
+        x: 1280
+        y: 720
+        width: 256
+        height: 240
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: sprite_bulle_11
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 480
+        width: 256
+        height: 240
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: sprite_bulle_12
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 480
+        width: 256
+        height: 240
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: sprite_bulle_13
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 480
+        width: 256
+        height: 240
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: sprite_bulle_14
+      rect:
+        serializedVersion: 2
+        x: 768
+        y: 480
+        width: 256
+        height: 240
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: sprite_bulle_15
+      rect:
+        serializedVersion: 2
+        x: 1024
+        y: 480
+        width: 256
+        height: 240
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: sprite_bulle_16
+      rect:
+        serializedVersion: 2
+        x: 1280
+        y: 480
+        width: 256
+        height: 240
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: sprite_bulle_17
+      rect:
+        serializedVersion: 2
+        x: 1536
+        y: 480
+        width: 256
+        height: 240
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: sprite_bulle_18
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 240
+        width: 256
+        height: 240
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: sprite_bulle_19
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 240
+        width: 256
+        height: 240
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: sprite_bulle_20
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 240
+        width: 256
+        height: 240
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: sprite_bulle_21
+      rect:
+        serializedVersion: 2
+        x: 768
+        y: 240
+        width: 256
+        height: 240
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: sprite_bulle_22
+      rect:
+        serializedVersion: 2
+        x: 1024
+        y: 240
+        width: 256
+        height: 240
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: sprite_bulle_23
+      rect:
+        serializedVersion: 2
+        x: 1280
+        y: 240
+        width: 256
+        height: 240
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: sprite_bulle_24
+      rect:
+        serializedVersion: 2
+        x: 1536
+        y: 240
+        width: 256
+        height: 240
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: sprite_bulle_25
+      rect:
+        serializedVersion: 2
+        x: 1792
+        y: 240
+        width: 256
+        height: 240
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: sprite_bulle_26
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 256
+        height: 240
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: sprite_bulle_27
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 0
+        width: 256
+        height: 240
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: sprite_bulle_28
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 0
+        width: 256
+        height: 240
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: sprite_bulle_29
+      rect:
+        serializedVersion: 2
+        x: 768
+        y: 0
+        width: 256
+        height: 240
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: sprite_bulle_30
+      rect:
+        serializedVersion: 2
+        x: 1024
+        y: 0
+        width: 256
+        height: 240
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: sprite_bulle_31
+      rect:
+        serializedVersion: 2
+        x: 1280
+        y: 0
+        width: 256
+        height: 240
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: sprite_bulle_32
+      rect:
+        serializedVersion: 2
+        x: 1536
+        y: 0
+        width: 256
+        height: 240
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: sprite_bulle_33
+      rect:
+        serializedVersion: 2
+        x: 1792
+        y: 0
+        width: 256
+        height: 240
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: sprite_bulle_34
+      rect:
+        serializedVersion: 2
+        x: 2048
+        y: 0
+        width: 256
+        height: 240
+      alignment: 0
+      pivot: {x: 0, y: 0}
+  spritePackingTag: 
+  userData: 

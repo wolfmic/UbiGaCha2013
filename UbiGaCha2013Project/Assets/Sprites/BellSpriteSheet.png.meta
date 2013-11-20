@@ -24,13 +24,13 @@ TextureImporter:
   maxTextureSize: 1024
   textureSettings:
     filterMode: 0
-    aniso: -1
+    aniso: 1
     mipBias: -1
-    wrapMode: -1
+    wrapMode: 1
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -40,6 +40,231 @@ TextureImporter:
   textureType: 8
   buildTargetSettings: []
   spriteSheet:
-    sprites: []
+    sprites:
+    - name: BellSpriteSheet_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 320
+        width: 90
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: BellSpriteSheet_1
+      rect:
+        serializedVersion: 2
+        x: 90
+        y: 320
+        width: 90
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: BellSpriteSheet_2
+      rect:
+        serializedVersion: 2
+        x: 180
+        y: 320
+        width: 90
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: BellSpriteSheet_3
+      rect:
+        serializedVersion: 2
+        x: 270
+        y: 320
+        width: 90
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: BellSpriteSheet_4
+      rect:
+        serializedVersion: 2
+        x: 360
+        y: 320
+        width: 90
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: BellSpriteSheet_5
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 240
+        width: 90
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: BellSpriteSheet_6
+      rect:
+        serializedVersion: 2
+        x: 90
+        y: 240
+        width: 90
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: BellSpriteSheet_7
+      rect:
+        serializedVersion: 2
+        x: 180
+        y: 240
+        width: 90
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: BellSpriteSheet_8
+      rect:
+        serializedVersion: 2
+        x: 270
+        y: 240
+        width: 90
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: BellSpriteSheet_9
+      rect:
+        serializedVersion: 2
+        x: 360
+        y: 240
+        width: 90
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: BellSpriteSheet_10
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 160
+        width: 90
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: BellSpriteSheet_11
+      rect:
+        serializedVersion: 2
+        x: 90
+        y: 160
+        width: 90
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: BellSpriteSheet_12
+      rect:
+        serializedVersion: 2
+        x: 180
+        y: 160
+        width: 90
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: BellSpriteSheet_13
+      rect:
+        serializedVersion: 2
+        x: 270
+        y: 160
+        width: 90
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: BellSpriteSheet_14
+      rect:
+        serializedVersion: 2
+        x: 360
+        y: 160
+        width: 90
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: BellSpriteSheet_15
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 80
+        width: 90
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: BellSpriteSheet_16
+      rect:
+        serializedVersion: 2
+        x: 90
+        y: 80
+        width: 90
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: BellSpriteSheet_17
+      rect:
+        serializedVersion: 2
+        x: 180
+        y: 80
+        width: 90
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: BellSpriteSheet_18
+      rect:
+        serializedVersion: 2
+        x: 270
+        y: 80
+        width: 90
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: BellSpriteSheet_19
+      rect:
+        serializedVersion: 2
+        x: 360
+        y: 80
+        width: 90
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: BellSpriteSheet_20
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 90
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: BellSpriteSheet_21
+      rect:
+        serializedVersion: 2
+        x: 90
+        y: 0
+        width: 90
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: BellSpriteSheet_22
+      rect:
+        serializedVersion: 2
+        x: 180
+        y: 0
+        width: 90
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: BellSpriteSheet_23
+      rect:
+        serializedVersion: 2
+        x: 270
+        y: 0
+        width: 90
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: BellSpriteSheet_24
+      rect:
+        serializedVersion: 2
+        x: 360
+        y: 0
+        width: 90
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
   spritePackingTag: 
   userData: 
