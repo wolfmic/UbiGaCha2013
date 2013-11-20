@@ -6,6 +6,8 @@ public class PlayerAnimationEventHandler : MonoBehaviour {
 
     public Action CarillonHitHandler;
     public Action HammerDroppedEventHandler;
+	public Action BellRingHandler;
+	public Action BellRingTerminatedHandler;
 
 	// Use this for initialization
 	void Start () {
@@ -28,5 +30,17 @@ public class PlayerAnimationEventHandler : MonoBehaviour {
             this.HammerDroppedEventHandler();
         }
     }
+
+	void OnBellRing() {
+		if (this.BellRingHandler != null) {
+			this.BellRingHandler();
+		}
+	}
+
+	void OnBellRingTerminated() {
+		if (this.BellRingTerminatedHandler != null) {
+			this.BellRingTerminatedHandler();
+		}
+	}
 
 }

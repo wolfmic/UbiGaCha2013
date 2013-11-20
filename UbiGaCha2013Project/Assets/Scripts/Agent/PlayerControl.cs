@@ -69,13 +69,18 @@ public class PlayerControl : MonoBehaviour {
     private GameObject _carillon;
     private int _rank;
     private MusicPlayer _musicPlayer;
+
+	private bool _isBellOnCooldown = false;
+	private PlayerBell _playerBell;
   
 	// Use this for initialization
 	void Start () {
         this.transform.position = new Vector3(this.startX, this.startY, 0.0f);
         this.world = GameObject.FindGameObjectWithTag("World");
-        _movementAnimator = new PlayerMovementAnimator(this.GetComponentInChildren<Animator>(), this.transform.position);
+        _movementAnimator = new PlayerMovementAnimator(GameObject.Find("PlayerSprite").GetComponent<Animator>(), this.transform.position);
         _musicPlayer = GameObject.Find("Music").GetComponent<MusicPlayer>();
+		_playerBell = this.GetComponentInChildren<PlayerBell>();
+		_playerBell.BellCooldownTerminatedHandler = this.OnBellCooldownTerminated;
 	}
 	
 	// Update is called once per frame
@@ -97,7 +102,7 @@ public class PlayerControl : MonoBehaviour {
                 this.RingCarillon();
             }
 
-            if (Input.GetButtonDown("Fire1"))
+            if (Input.GetButtonDown("Fire1") && _isBellOnCooldown == false)
                 UseBellSkill();
 
             _movementAnimator.Update(this.transform.position);
@@ -198,6 +203,11 @@ public class PlayerControl : MonoBehaviour {
         }
     }
 
+	void OnBellCooldownTerminated()
+	{
+		_isBellOnCooldown = false;
+	}
+
     bool IsInRange(GameObject enemy)
     {
         if (Math.Abs(enemy.transform.position.x - this.transform.position.x) <= range_detection)
@@ -216,6 +226,18 @@ public class PlayerControl : MonoBehaviour {
 
     void UseBellSkill()
     {
+		PlayerAnimationEventHandler playerAnimationEventHandler;
+		
+		playerAnimationEventHandler = this.GetComponentInChildren<PlayerAnimationEventHandler>();
+		_movementAnimator.Animator.SetTrigger("Idle");
+		_movementAnimator.Animator.SetTrigger("RingBell");
+		playerAnimationEventHandler.BellRingHandler = this.OnBellRing;
+		playerAnimationEventHandler.BellRingTerminatedHandler = this.OnBellRingTerminated;
+		this.freeze = true;
+	}
+
+	void OnBellRing()
+	{
         GameObject[] enemies = GameObject.FindGameObjectsWithTag("Enemies");
 
         for (int i = 0; i< enemies.Length; i++)
@@ -228,7 +250,14 @@ public class PlayerControl : MonoBehaviour {
                 enemies[i].GetComponent<AgentBehavior>().anim.SetTrigger("Kick");
             }
         }
+		_playerBell.Ring(this.level.ToString());
+		_isBellOnCooldown = true;
     }
+
+	void OnBellRingTerminated()
+	{
+		this.freeze = false;
+	}
 
     void SetFreeze(bool activation)
     {
