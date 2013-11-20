@@ -11,6 +11,11 @@ public class GameVariables : MonoBehaviour {
    GameObject player;
    GameObject[] enemies, floors;
    public GameObject CrowdAgent, instance;
+
+   public Sprite custom1;
+   public Sprite custom2;
+   public Sprite custom3;
+   public Sprite custom4;
    
 
    public int getNbrMax() { return maxNbrEnemies; }
@@ -61,7 +66,7 @@ public class GameVariables : MonoBehaviour {
 
             for (int j = 0; j < maxNbrEnemies; j++)
             {
-                if ((int)enemies[j].GetComponent<AgentBehavior>().floor == invisibleFloor[i])
+                if ((enemies[j].GetComponent<AgentBehavior>().floor == invisibleFloor[i]))
                 {
                     toDelete.Add(j);
                     countDel++;

@@ -13,7 +13,7 @@ public class MusicMaster : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		_duckableEmitters = GameObject.FindGameObjectsWithTag("DukableSound");
+		_duckableEmitters = GameObject.FindGameObjectsWithTag("DuckableSound");
 	}
 	
 	// Update is called once per frame
