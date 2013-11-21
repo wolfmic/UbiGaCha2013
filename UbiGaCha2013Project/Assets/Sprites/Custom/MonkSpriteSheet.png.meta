@@ -1,0 +1,729 @@
+fileFormatVersion: 2
+guid: 27fa77755da9da24ca7d5be1d41e5a54
+TextureImporter:
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: .25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  seamlessCubemap: 0
+  textureFormat: -1
+  maxTextureSize: 1024
+  textureSettings:
+    filterMode: 0
+    aniso: 1
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: .5, y: .5}
+  spritePixelsToUnits: 100
+  alphaIsTransparency: 1
+  textureType: 8
+  buildTargetSettings: []
+  spriteSheet:
+    sprites:
+    - name: MonkSpriteSheet_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 360
+        width: 29
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: MonkSpriteSheet_1
+      rect:
+        serializedVersion: 2
+        x: 29
+        y: 360
+        width: 29
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: MonkSpriteSheet_2
+      rect:
+        serializedVersion: 2
+        x: 58
+        y: 360
+        width: 29
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: MonkSpriteSheet_3
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 330
+        width: 29
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: MonkSpriteSheet_4
+      rect:
+        serializedVersion: 2
+        x: 29
+        y: 330
+        width: 29
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: MonkSpriteSheet_5
+      rect:
+        serializedVersion: 2
+        x: 58
+        y: 330
+        width: 29
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: MonkSpriteSheet_6
+      rect:
+        serializedVersion: 2
+        x: 87
+        y: 330
+        width: 29
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: MonkSpriteSheet_7
+      rect:
+        serializedVersion: 2
+        x: 116
+        y: 330
+        width: 29
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: MonkSpriteSheet_8
+      rect:
+        serializedVersion: 2
+        x: 145
+        y: 330
+        width: 29
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: MonkSpriteSheet_9
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 300
+        width: 29
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: MonkSpriteSheet_10
+      rect:
+        serializedVersion: 2
+        x: 29
+        y: 300
+        width: 29
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: MonkSpriteSheet_11
+      rect:
+        serializedVersion: 2
+        x: 58
+        y: 300
+        width: 29
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: MonkSpriteSheet_12
+      rect:
+        serializedVersion: 2
+        x: 87
+        y: 300
+        width: 29
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: MonkSpriteSheet_13
+      rect:
+        serializedVersion: 2
+        x: 116
+        y: 300
+        width: 29
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: MonkSpriteSheet_14
+      rect:
+        serializedVersion: 2
+        x: 145
+        y: 300
+        width: 29
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: MonkSpriteSheet_15
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 270
+        width: 29
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: MonkSpriteSheet_16
+      rect:
+        serializedVersion: 2
+        x: 29
+        y: 270
+        width: 29
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: MonkSpriteSheet_17
+      rect:
+        serializedVersion: 2
+        x: 58
+        y: 270
+        width: 29
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: MonkSpriteSheet_18
+      rect:
+        serializedVersion: 2
+        x: 87
+        y: 270
+        width: 29
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: MonkSpriteSheet_19
+      rect:
+        serializedVersion: 2
+        x: 116
+        y: 270
+        width: 29
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: MonkSpriteSheet_20
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 240
+        width: 29
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: MonkSpriteSheet_21
+      rect:
+        serializedVersion: 2
+        x: 29
+        y: 240
+        width: 29
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: MonkSpriteSheet_22
+      rect:
+        serializedVersion: 2
+        x: 58
+        y: 240
+        width: 29
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: MonkSpriteSheet_23
+      rect:
+        serializedVersion: 2
+        x: 87
+        y: 240
+        width: 29
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: MonkSpriteSheet_24
+      rect:
+        serializedVersion: 2
+        x: 116
+        y: 240
+        width: 29
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: MonkSpriteSheet_25
+      rect:
+        serializedVersion: 2
+        x: 145
+        y: 240
+        width: 29
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: MonkSpriteSheet_26
+      rect:
+        serializedVersion: 2
+        x: 174
+        y: 240
+        width: 29
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: MonkSpriteSheet_27
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 210
+        width: 29
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: MonkSpriteSheet_28
+      rect:
+        serializedVersion: 2
+        x: 29
+        y: 210
+        width: 29
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: MonkSpriteSheet_29
+      rect:
+        serializedVersion: 2
+        x: 58
+        y: 210
+        width: 29
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: MonkSpriteSheet_30
+      rect:
+        serializedVersion: 2
+        x: 87
+        y: 210
+        width: 29
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: MonkSpriteSheet_31
+      rect:
+        serializedVersion: 2
+        x: 116
+        y: 210
+        width: 29
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: MonkSpriteSheet_32
+      rect:
+        serializedVersion: 2
+        x: 145
+        y: 210
+        width: 29
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: MonkSpriteSheet_33
+      rect:
+        serializedVersion: 2
+        x: 174
+        y: 210
+        width: 29
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: MonkSpriteSheet_34
+      rect:
+        serializedVersion: 2
+        x: 203
+        y: 210
+        width: 29
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: MonkSpriteSheet_35
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 180
+        width: 29
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: MonkSpriteSheet_36
+      rect:
+        serializedVersion: 2
+        x: 29
+        y: 180
+        width: 29
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: MonkSpriteSheet_37
+      rect:
+        serializedVersion: 2
+        x: 58
+        y: 180
+        width: 29
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: MonkSpriteSheet_38
+      rect:
+        serializedVersion: 2
+        x: 87
+        y: 180
+        width: 29
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: MonkSpriteSheet_39
+      rect:
+        serializedVersion: 2
+        x: 116
+        y: 180
+        width: 29
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: MonkSpriteSheet_40
+      rect:
+        serializedVersion: 2
+        x: 145
+        y: 180
+        width: 29
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: MonkSpriteSheet_41
+      rect:
+        serializedVersion: 2
+        x: 174
+        y: 180
+        width: 29
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: MonkSpriteSheet_42
+      rect:
+        serializedVersion: 2
+        x: 203
+        y: 180
+        width: 29
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: MonkSpriteSheet_43
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 150
+        width: 29
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: MonkSpriteSheet_44
+      rect:
+        serializedVersion: 2
+        x: 29
+        y: 150
+        width: 29
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: MonkSpriteSheet_45
+      rect:
+        serializedVersion: 2
+        x: 58
+        y: 150
+        width: 29
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: MonkSpriteSheet_46
+      rect:
+        serializedVersion: 2
+        x: 87
+        y: 150
+        width: 29
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: MonkSpriteSheet_47
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 120
+        width: 29
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: MonkSpriteSheet_48
+      rect:
+        serializedVersion: 2
+        x: 29
+        y: 120
+        width: 29
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: MonkSpriteSheet_49
+      rect:
+        serializedVersion: 2
+        x: 58
+        y: 120
+        width: 29
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: MonkSpriteSheet_50
+      rect:
+        serializedVersion: 2
+        x: 87
+        y: 120
+        width: 29
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: MonkSpriteSheet_51
+      rect:
+        serializedVersion: 2
+        x: 116
+        y: 120
+        width: 29
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: MonkSpriteSheet_52
+      rect:
+        serializedVersion: 2
+        x: 145
+        y: 120
+        width: 29
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: MonkSpriteSheet_53
+      rect:
+        serializedVersion: 2
+        x: 174
+        y: 120
+        width: 29
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: MonkSpriteSheet_54
+      rect:
+        serializedVersion: 2
+        x: 203
+        y: 120
+        width: 29
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: MonkSpriteSheet_55
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 90
+        width: 29
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: MonkSpriteSheet_56
+      rect:
+        serializedVersion: 2
+        x: 29
+        y: 90
+        width: 29
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: MonkSpriteSheet_57
+      rect:
+        serializedVersion: 2
+        x: 58
+        y: 90
+        width: 29
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: MonkSpriteSheet_58
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 60
+        width: 29
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: MonkSpriteSheet_59
+      rect:
+        serializedVersion: 2
+        x: 29
+        y: 60
+        width: 29
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: MonkSpriteSheet_60
+      rect:
+        serializedVersion: 2
+        x: 58
+        y: 60
+        width: 29
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: MonkSpriteSheet_61
+      rect:
+        serializedVersion: 2
+        x: 87
+        y: 60
+        width: 29
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: MonkSpriteSheet_62
+      rect:
+        serializedVersion: 2
+        x: 116
+        y: 60
+        width: 29
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: MonkSpriteSheet_63
+      rect:
+        serializedVersion: 2
+        x: 145
+        y: 60
+        width: 29
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: MonkSpriteSheet_64
+      rect:
+        serializedVersion: 2
+        x: 174
+        y: 60
+        width: 29
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: MonkSpriteSheet_65
+      rect:
+        serializedVersion: 2
+        x: 203
+        y: 60
+        width: 29
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: MonkSpriteSheet_66
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 30
+        width: 29
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: MonkSpriteSheet_67
+      rect:
+        serializedVersion: 2
+        x: 29
+        y: 30
+        width: 29
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: MonkSpriteSheet_68
+      rect:
+        serializedVersion: 2
+        x: 58
+        y: 30
+        width: 29
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: MonkSpriteSheet_69
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 29
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: MonkSpriteSheet_70
+      rect:
+        serializedVersion: 2
+        x: 29
+        y: 0
+        width: 29
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: MonkSpriteSheet_71
+      rect:
+        serializedVersion: 2
+        x: 58
+        y: 0
+        width: 29
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: MonkSpriteSheet_72
+      rect:
+        serializedVersion: 2
+        x: 87
+        y: 0
+        width: 29
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: MonkSpriteSheet_73
+      rect:
+        serializedVersion: 2
+        x: 116
+        y: 0
+        width: 29
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: MonkSpriteSheet_74
+      rect:
+        serializedVersion: 2
+        x: 145
+        y: 0
+        width: 29
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: MonkSpriteSheet_75
+      rect:
+        serializedVersion: 2
+        x: 174
+        y: 0
+        width: 29
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+  spritePackingTag: 
+  userData: 

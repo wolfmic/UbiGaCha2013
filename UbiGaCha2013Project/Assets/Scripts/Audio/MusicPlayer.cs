@@ -42,7 +42,17 @@ public class MusicPlayer : MonoBehaviour {
 		this.audio.clip = this.Playlist[this.PlaylistIndex];
 		this.audio.Play();
 		this.audio.loop = true;
+        _prevPositionInMusic = 0;
 	}
+
+    public void PlayRightNow(AudioClip clip)
+    {
+        this.audio.clip = clip;
+        this.audio.Play();
+        this.audio.loop = true;
+        _prevPositionInMusic = 0;
+        this.Rewind();
+    }
 
 	public void Next() {
 		_next = true;

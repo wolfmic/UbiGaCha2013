@@ -1,0 +1,702 @@
+fileFormatVersion: 2
+guid: efe92757937f22f4094e16507c95fc8d
+TextureImporter:
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: .25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  seamlessCubemap: 0
+  textureFormat: -1
+  maxTextureSize: 1024
+  textureSettings:
+    filterMode: 0
+    aniso: 1
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: .5, y: .5}
+  spritePixelsToUnits: 100
+  alphaIsTransparency: 1
+  textureType: 8
+  buildTargetSettings: []
+  spriteSheet:
+    sprites:
+    - name: Personnage 5_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 360
+        width: 30
+        height: 30
+      alignment: 1
+      pivot: {x: 0, y: 0}
+    - name: Personnage 5_1
+      rect:
+        serializedVersion: 2
+        x: 30
+        y: 360
+        width: 30
+        height: 30
+      alignment: 1
+      pivot: {x: 0, y: 0}
+    - name: Personnage 5_2
+      rect:
+        serializedVersion: 2
+        x: 60
+        y: 360
+        width: 30
+        height: 30
+      alignment: 1
+      pivot: {x: 0, y: 0}
+    - name: Personnage 5_3
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 330
+        width: 30
+        height: 30
+      alignment: 1
+      pivot: {x: 0, y: 0}
+    - name: Personnage 5_4
+      rect:
+        serializedVersion: 2
+        x: 30
+        y: 330
+        width: 30
+        height: 30
+      alignment: 1
+      pivot: {x: 0, y: 0}
+    - name: Personnage 5_5
+      rect:
+        serializedVersion: 2
+        x: 60
+        y: 330
+        width: 30
+        height: 30
+      alignment: 1
+      pivot: {x: 0, y: 0}
+    - name: Personnage 5_6
+      rect:
+        serializedVersion: 2
+        x: 90
+        y: 330
+        width: 30
+        height: 30
+      alignment: 1
+      pivot: {x: 0, y: 0}
+    - name: Personnage 5_7
+      rect:
+        serializedVersion: 2
+        x: 120
+        y: 330
+        width: 30
+        height: 30
+      alignment: 1
+      pivot: {x: 0, y: 0}
+    - name: Personnage 5_8
+      rect:
+        serializedVersion: 2
+        x: 150
+        y: 330
+        width: 30
+        height: 30
+      alignment: 1
+      pivot: {x: 0, y: 0}
+    - name: Personnage 5_9
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 300
+        width: 30
+        height: 30
+      alignment: 1
+      pivot: {x: 0, y: 0}
+    - name: Personnage 5_10
+      rect:
+        serializedVersion: 2
+        x: 30
+        y: 300
+        width: 30
+        height: 30
+      alignment: 1
+      pivot: {x: 0, y: 0}
+    - name: Personnage 5_11
+      rect:
+        serializedVersion: 2
+        x: 60
+        y: 300
+        width: 30
+        height: 30
+      alignment: 1
+      pivot: {x: 0, y: 0}
+    - name: Personnage 5_12
+      rect:
+        serializedVersion: 2
+        x: 90
+        y: 300
+        width: 30
+        height: 30
+      alignment: 1
+      pivot: {x: 0, y: 0}
+    - name: Personnage 5_13
+      rect:
+        serializedVersion: 2
+        x: 120
+        y: 300
+        width: 30
+        height: 30
+      alignment: 1
+      pivot: {x: 0, y: 0}
+    - name: Personnage 5_14
+      rect:
+        serializedVersion: 2
+        x: 150
+        y: 300
+        width: 30
+        height: 30
+      alignment: 1
+      pivot: {x: 0, y: 0}
+    - name: Personnage 5_15
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 270
+        width: 30
+        height: 30
+      alignment: 1
+      pivot: {x: 0, y: 0}
+    - name: Personnage 5_16
+      rect:
+        serializedVersion: 2
+        x: 30
+        y: 270
+        width: 30
+        height: 30
+      alignment: 1
+      pivot: {x: 0, y: 0}
+    - name: Personnage 5_17
+      rect:
+        serializedVersion: 2
+        x: 60
+        y: 270
+        width: 30
+        height: 30
+      alignment: 1
+      pivot: {x: 0, y: 0}
+    - name: Personnage 5_18
+      rect:
+        serializedVersion: 2
+        x: 90
+        y: 270
+        width: 30
+        height: 30
+      alignment: 1
+      pivot: {x: 0, y: 0}
+    - name: Personnage 5_19
+      rect:
+        serializedVersion: 2
+        x: 120
+        y: 270
+        width: 30
+        height: 30
+      alignment: 1
+      pivot: {x: 0, y: 0}
+    - name: Personnage 5_20
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 240
+        width: 30
+        height: 30
+      alignment: 1
+      pivot: {x: 0, y: 0}
+    - name: Personnage 5_21
+      rect:
+        serializedVersion: 2
+        x: 30
+        y: 240
+        width: 30
+        height: 30
+      alignment: 1
+      pivot: {x: 0, y: 0}
+    - name: Personnage 5_22
+      rect:
+        serializedVersion: 2
+        x: 60
+        y: 240
+        width: 30
+        height: 30
+      alignment: 1
+      pivot: {x: 0, y: 0}
+    - name: Personnage 5_23
+      rect:
+        serializedVersion: 2
+        x: 90
+        y: 240
+        width: 30
+        height: 30
+      alignment: 1
+      pivot: {x: 0, y: 0}
+    - name: Personnage 5_24
+      rect:
+        serializedVersion: 2
+        x: 120
+        y: 240
+        width: 30
+        height: 30
+      alignment: 1
+      pivot: {x: 0, y: 0}
+    - name: Personnage 5_27
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 210
+        width: 30
+        height: 30
+      alignment: 1
+      pivot: {x: 0, y: 0}
+    - name: Personnage 5_28
+      rect:
+        serializedVersion: 2
+        x: 30
+        y: 210
+        width: 30
+        height: 30
+      alignment: 1
+      pivot: {x: 0, y: 0}
+    - name: Personnage 5_29
+      rect:
+        serializedVersion: 2
+        x: 60
+        y: 210
+        width: 30
+        height: 30
+      alignment: 1
+      pivot: {x: 0, y: 0}
+    - name: Personnage 5_30
+      rect:
+        serializedVersion: 2
+        x: 90
+        y: 210
+        width: 30
+        height: 30
+      alignment: 1
+      pivot: {x: 0, y: 0}
+    - name: Personnage 5_31
+      rect:
+        serializedVersion: 2
+        x: 120
+        y: 210
+        width: 30
+        height: 30
+      alignment: 1
+      pivot: {x: 0, y: 0}
+    - name: Personnage 5_32
+      rect:
+        serializedVersion: 2
+        x: 150
+        y: 210
+        width: 30
+        height: 30
+      alignment: 1
+      pivot: {x: 0, y: 0}
+    - name: Personnage 5_33
+      rect:
+        serializedVersion: 2
+        x: 180
+        y: 210
+        width: 30
+        height: 30
+      alignment: 1
+      pivot: {x: 0, y: 0}
+    - name: Personnage 5_34
+      rect:
+        serializedVersion: 2
+        x: 205
+        y: 210
+        width: 30
+        height: 30
+      alignment: 1
+      pivot: {x: 0, y: 1}
+    - name: Personnage 5_35
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 180
+        width: 30
+        height: 30
+      alignment: 1
+      pivot: {x: 0, y: 0}
+    - name: Personnage 5_36
+      rect:
+        serializedVersion: 2
+        x: 30
+        y: 180
+        width: 30
+        height: 30
+      alignment: 1
+      pivot: {x: 0, y: 0}
+    - name: Personnage 5_37
+      rect:
+        serializedVersion: 2
+        x: 60
+        y: 180
+        width: 30
+        height: 30
+      alignment: 1
+      pivot: {x: 0, y: 0}
+    - name: Personnage 5_38
+      rect:
+        serializedVersion: 2
+        x: 90
+        y: 180
+        width: 30
+        height: 30
+      alignment: 1
+      pivot: {x: 0, y: 0}
+    - name: Personnage 5_39
+      rect:
+        serializedVersion: 2
+        x: 120
+        y: 180
+        width: 30
+        height: 30
+      alignment: 1
+      pivot: {x: 0, y: 0}
+    - name: Personnage 5_40
+      rect:
+        serializedVersion: 2
+        x: 150
+        y: 180
+        width: 30
+        height: 30
+      alignment: 1
+      pivot: {x: 0, y: 0}
+    - name: Personnage 5_41
+      rect:
+        serializedVersion: 2
+        x: 180
+        y: 180
+        width: 30
+        height: 30
+      alignment: 1
+      pivot: {x: 0, y: 0}
+    - name: Personnage 5_42
+      rect:
+        serializedVersion: 2
+        x: 210
+        y: 180
+        width: 30
+        height: 30
+      alignment: 1
+      pivot: {x: 0, y: 0}
+    - name: Personnage 5_43
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 150
+        width: 30
+        height: 30
+      alignment: 1
+      pivot: {x: 0, y: 0}
+    - name: Personnage 5_44
+      rect:
+        serializedVersion: 2
+        x: 30
+        y: 150
+        width: 30
+        height: 30
+      alignment: 1
+      pivot: {x: 0, y: 0}
+    - name: Personnage 5_45
+      rect:
+        serializedVersion: 2
+        x: 60
+        y: 150
+        width: 30
+        height: 30
+      alignment: 1
+      pivot: {x: 0, y: 0}
+    - name: Personnage 5_46
+      rect:
+        serializedVersion: 2
+        x: 90
+        y: 150
+        width: 30
+        height: 30
+      alignment: 1
+      pivot: {x: 0, y: 0}
+    - name: Personnage 5_47
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 120
+        width: 30
+        height: 30
+      alignment: 1
+      pivot: {x: 0, y: 0}
+    - name: Personnage 5_48
+      rect:
+        serializedVersion: 2
+        x: 30
+        y: 120
+        width: 30
+        height: 30
+      alignment: 1
+      pivot: {x: 0, y: 0}
+    - name: Personnage 5_49
+      rect:
+        serializedVersion: 2
+        x: 60
+        y: 120
+        width: 30
+        height: 30
+      alignment: 1
+      pivot: {x: 0, y: 0}
+    - name: Personnage 5_50
+      rect:
+        serializedVersion: 2
+        x: 90
+        y: 120
+        width: 30
+        height: 30
+      alignment: 1
+      pivot: {x: 0, y: 0}
+    - name: Personnage 5_51
+      rect:
+        serializedVersion: 2
+        x: 120
+        y: 120
+        width: 30
+        height: 30
+      alignment: 1
+      pivot: {x: 0, y: 0}
+    - name: Personnage 5_52
+      rect:
+        serializedVersion: 2
+        x: 150
+        y: 120
+        width: 30
+        height: 30
+      alignment: 1
+      pivot: {x: 0, y: 0}
+    - name: Personnage 5_53
+      rect:
+        serializedVersion: 2
+        x: 180
+        y: 120
+        width: 30
+        height: 30
+      alignment: 1
+      pivot: {x: 0, y: 0}
+    - name: Personnage 5_54
+      rect:
+        serializedVersion: 2
+        x: 210
+        y: 120
+        width: 30
+        height: 30
+      alignment: 1
+      pivot: {x: 0, y: 0}
+    - name: Personnage 5_55
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 90
+        width: 30
+        height: 30
+      alignment: 1
+      pivot: {x: 0, y: 0}
+    - name: Personnage 5_56
+      rect:
+        serializedVersion: 2
+        x: 30
+        y: 90
+        width: 30
+        height: 30
+      alignment: 1
+      pivot: {x: 0, y: 0}
+    - name: Personnage 5_57
+      rect:
+        serializedVersion: 2
+        x: 60
+        y: 90
+        width: 30
+        height: 30
+      alignment: 1
+      pivot: {x: 0, y: 0}
+    - name: Personnage 5_58
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 60
+        width: 30
+        height: 30
+      alignment: 1
+      pivot: {x: 0, y: 0}
+    - name: Personnage 5_59
+      rect:
+        serializedVersion: 2
+        x: 30
+        y: 60
+        width: 30
+        height: 30
+      alignment: 1
+      pivot: {x: 0, y: 0}
+    - name: Personnage 5_60
+      rect:
+        serializedVersion: 2
+        x: 60
+        y: 60
+        width: 30
+        height: 30
+      alignment: 1
+      pivot: {x: 0, y: 0}
+    - name: Personnage 5_61
+      rect:
+        serializedVersion: 2
+        x: 90
+        y: 60
+        width: 30
+        height: 30
+      alignment: 1
+      pivot: {x: 0, y: 0}
+    - name: Personnage 5_62
+      rect:
+        serializedVersion: 2
+        x: 120
+        y: 60
+        width: 30
+        height: 30
+      alignment: 1
+      pivot: {x: 0, y: 0}
+    - name: Personnage 5_63
+      rect:
+        serializedVersion: 2
+        x: 150
+        y: 60
+        width: 30
+        height: 30
+      alignment: 1
+      pivot: {x: 0, y: 0}
+    - name: Personnage 5_64
+      rect:
+        serializedVersion: 2
+        x: 180
+        y: 60
+        width: 30
+        height: 30
+      alignment: 1
+      pivot: {x: 0, y: 0}
+    - name: Personnage 5_65
+      rect:
+        serializedVersion: 2
+        x: 210
+        y: 60
+        width: 30
+        height: 30
+      alignment: 1
+      pivot: {x: 0, y: 0}
+    - name: Personnage 5_66
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 30
+        width: 30
+        height: 30
+      alignment: 1
+      pivot: {x: 0, y: 0}
+    - name: Personnage 5_67
+      rect:
+        serializedVersion: 2
+        x: 30
+        y: 30
+        width: 30
+        height: 30
+      alignment: 1
+      pivot: {x: 0, y: 0}
+    - name: Personnage 5_68
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 30
+        height: 30
+      alignment: 1
+      pivot: {x: 0, y: 0}
+    - name: Personnage 5_69
+      rect:
+        serializedVersion: 2
+        x: 30
+        y: 0
+        width: 30
+        height: 30
+      alignment: 1
+      pivot: {x: 0, y: 0}
+    - name: Personnage 5_70
+      rect:
+        serializedVersion: 2
+        x: 60
+        y: 0
+        width: 30
+        height: 30
+      alignment: 1
+      pivot: {x: 0, y: 0}
+    - name: Personnage 5_71
+      rect:
+        serializedVersion: 2
+        x: 90
+        y: 0
+        width: 30
+        height: 30
+      alignment: 1
+      pivot: {x: 0, y: 0}
+    - name: Personnage 5_72
+      rect:
+        serializedVersion: 2
+        x: 120
+        y: 0
+        width: 30
+        height: 30
+      alignment: 1
+      pivot: {x: 0, y: 0}
+    - name: Personnage 5_73
+      rect:
+        serializedVersion: 2
+        x: 150
+        y: 0
+        width: 30
+        height: 30
+      alignment: 1
+      pivot: {x: 0, y: 0}
+    - name: Personnage 5_74
+      rect:
+        serializedVersion: 2
+        x: 180
+        y: 0
+        width: 30
+        height: 30
+      alignment: 1
+      pivot: {x: 0, y: 0}
+  spritePackingTag: 
+  userData: 

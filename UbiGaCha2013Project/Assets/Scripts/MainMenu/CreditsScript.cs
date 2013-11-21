@@ -4,12 +4,14 @@ using System.Collections;
 
 public class CreditsScript : MonoBehaviour {
 
-	private const float SCROLL_SPEED = 0.5f;
+	private const float SCROLL_SPEED = 0.4f;
 
 	private bool _running = false;
 	private GameObject _creditsSprite;
 	private GameObject _backgroundNoTitle;
+    private GameObject _soundPlayer;
 	private Vector3 _initialCreditsPosition;
+    public AudioClip clip;
 
 	// Use this for initialization
 	void Start () {
@@ -17,6 +19,8 @@ public class CreditsScript : MonoBehaviour {
 		_backgroundNoTitle = GameObject.Find("BackgroundNoTitle");
 
 		_initialCreditsPosition = _creditsSprite.transform.position;
+        _soundPlayer = GameObject.Find("MusicPlayer");
+        
 	}
 	
 	// Update is called once per frame
@@ -34,5 +38,6 @@ public class CreditsScript : MonoBehaviour {
 	void Activate() {
 		_running = true;
 		_backgroundNoTitle.renderer.sortingOrder = 4;
+        _soundPlayer.GetComponent<MusicPlayer>().PlayRightNow(clip);
 	}
 }

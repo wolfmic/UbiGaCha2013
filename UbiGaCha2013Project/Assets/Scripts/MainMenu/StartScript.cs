@@ -14,6 +14,6 @@ public class StartScript : MonoBehaviour {
 	}
 
 	void Activate() {
-		// TODO: load level 1 screen
+		Application.LoadLevel("level01");
 	}
 }

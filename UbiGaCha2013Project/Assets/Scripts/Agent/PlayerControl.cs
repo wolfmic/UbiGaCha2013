@@ -37,7 +37,10 @@ public class PlayerControl : MonoBehaviour {
                 newState = State.IDLE;
             }
             if (newState != _oldState) {
-                switch (newState) {
+				Animator.ResetTrigger("Idle");
+				Animator.ResetTrigger("WalkLeft");
+				Animator.ResetTrigger("WalkRight");
+				switch (newState) {
                     case State.IDLE: Animator.SetTrigger("Idle"); break;
                     case State.LEFT: Animator.SetTrigger("WalkLeft"); break;
                     case State.RIGHT: Animator.SetTrigger("WalkRight"); break;
@@ -52,10 +55,9 @@ public class PlayerControl : MonoBehaviour {
 
     public float velocity = 12.0f, velocity_max = 12.0f;
     public int level = 5;
-    public float range_detection = 0.5f, bell_range = 1.5f;
-    public int floor = 0;
+	public float range_detection = 0.5f, bell_range, bell_range0, bell_range1, bell_range2, bell_range3, bell_range4;
+	public int floor = 0;
 
-    public float startX = 0.0f, startY = 0.0f;
     private Vector3 direction = Vector3.zero;
     public bool onFloor = true;
     private bool onStairs = false;
@@ -69,24 +71,46 @@ public class PlayerControl : MonoBehaviour {
     private GameObject _carillon;
     private int _rank;
     private MusicPlayer _musicPlayer;
+    public GameObject[] skin;
+    private int currentSkin = 0;
 
 	private bool _isBellOnCooldown = false;
 	private PlayerBell _playerBell;
-  
+	private DoorScript _door;
+
+	private float _timeElapsedWhileStopped;
+
 	// Use this for initialization
 	void Start () {
-        this.transform.position = new Vector3(this.startX, this.startY, 0.0f);
+		Debug.Log("PlayerControl.Start");
         this.world = GameObject.FindGameObjectWithTag("World");
+		_timeElapsedWhileStopped = 0f;
         _movementAnimator = new PlayerMovementAnimator(GameObject.Find("PlayerSprite").GetComponent<Animator>(), this.transform.position);
         _musicPlayer = GameObject.Find("Music").GetComponent<MusicPlayer>();
 		_playerBell = this.GetComponentInChildren<PlayerBell>();
 		_playerBell.BellCooldownTerminatedHandler = this.OnBellCooldownTerminated;
+		_door = GameObject.Find ("Door").GetComponent<DoorScript>();
 	}
 	
 	// Update is called once per frame
 	void Update () {
 
         UpdateSpeed();
+
+		if (Input.GetKeyDown("0")) {
+			Application.LoadLevel(Application.loadedLevelName);
+		}
+
+		Debug.Log(this.velocity);
+		if (this.velocity < 0.22f) {
+			_timeElapsedWhileStopped += Time.deltaTime;
+			if (_timeElapsedWhileStopped > 2f) {
+				this.freeze = true;
+				Application.LoadLevel(Application.loadedLevelName);
+			}
+		} else {
+			_timeElapsedWhileStopped = 0f;
+		}
 
         if (this.freeze == false) {
             if (onFloor == true) {
@@ -102,8 +126,11 @@ public class PlayerControl : MonoBehaviour {
                 this.RingCarillon();
             }
 
-            if (Input.GetButtonDown("Fire1") && _isBellOnCooldown == false)
+            if (Input.GetButtonDown("Jump") && _isBellOnCooldown == false)
                 UseBellSkill();
+
+            if (Input.GetKeyDown("a"))
+                ChangeSkin();
 
             _movementAnimator.Update(this.transform.position);
         }
@@ -124,12 +151,18 @@ public class PlayerControl : MonoBehaviour {
     }
 
     void OnHammerDropped() {
+		BellBehaviour bell = _carillon.GetComponent<BellBehaviour>();
+
         this.freeze = false;
         // check we hit the right bell
-        if (_carillon.GetComponent<BellBehaviour>().Rank == _rank) {
+        if (bell.Rank == _rank) {
             // rank up
             _rank += 1;
             _musicPlayer.Next();
+			if (bell.LastBell) {
+				this.SetLastBell(true);
+				_door.Open();
+			}
             // TODO: increase difficulty
         } else {
             _rank = 0;
@@ -218,6 +251,14 @@ public class PlayerControl : MonoBehaviour {
 
     bool IsInBellSkillRange(GameObject enemy)
     {
+		switch(this.level)
+		{
+		case 1: bell_range = bell_range0; break;
+		case 2: bell_range = bell_range1; break;
+		case 3: bell_range = bell_range2; break;
+		case 4: bell_range = bell_range3; break;
+		case 5: bell_range = bell_range4; break;
+		}
         if (Math.Abs(enemy.transform.position.x - this.transform.position.x) <= bell_range)
             return true;
         else
@@ -272,7 +313,9 @@ public class PlayerControl : MonoBehaviour {
             GameObject[] bells = GameObject.FindGameObjectsWithTag("Bell");
             foreach (GameObject bell in bells)
             {
-                bell.SendMessage("SetLevelClear");
+				BellBehaviour bellBehaviour = bell.GetComponent<BellBehaviour>();
+				if (bellBehaviour != null)
+                	bellBehaviour.SetLevelClear();
             }
         }
     }
@@ -288,6 +331,20 @@ public class PlayerControl : MonoBehaviour {
         {
             level = 0;
         }
+    }
+
+    void ChangeSkin()
+    {
+        currentSkin++;
+        if (currentSkin >= skin.Length)
+            currentSkin = 0;
+
+        if (!skin[currentSkin].GetComponent<SkinClass>().get)
+            ChangeSkin();
+
+        this.GetComponentInChildren<SpriteRenderer>().sprite = this.skin[currentSkin].GetComponent<SkinClass>().skin;
+
+        
     }
 }
 

@@ -50,6 +50,8 @@ public class MenuScript : MonoBehaviour {
 				obj = _menuEntries[_menuIndex].GetComponent<ExitScript>();
 			if (obj == null)
 				obj = _menuEntries[_menuIndex].GetComponent<StartScript>();
+            if (obj == null)
+                obj = _menuEntries[_menuIndex].GetComponent<InstructionsScript>();
 			if (obj != null) {
 				_menuValidateSoundEmitter.audio.Play();
 				obj.SendMessage("Activate");

@@ -19,15 +19,15 @@ public class AgentSpawn : MonoBehaviour {
         gameVariables = GameObject.Find("World");
         floors = GameObject.FindGameObjectsWithTag("Floor");
         numberOfObjects = gameVariables.GetComponent<GameVariables>().getNbrMax();
-        nbrOfFloor = gameVariables.GetComponent<GameVariables>().getNbrFloor();
+        nbrOfFloor = floors.Length;
 
-        for (int i = 0; i < gameVariables.GetComponent<GameVariables>().getNbrFloor(); i++)
+        for (int i = 0; i < nbrOfFloor; i++)
         {
             if (floors[i].GetComponent<FloorClass>().spawnable == false)
                 nbrOfFloor--;
         }
 
-        for (int i = 0; i < gameVariables.GetComponent<GameVariables>().getNbrFloor(); i++)
+        for (int i = 0; i < nbrOfFloor; i++)
         {
             if (floors[i].GetComponent<FloorClass>().spawnable == false)
                 continue;
@@ -76,7 +76,7 @@ public class AgentSpawn : MonoBehaviour {
                 this.xMax = floors[i].renderer.bounds.max.x;
                 this.xMin = floors[i].renderer.bounds.min.x;
 
-                for (int j = 0; j < nbr / nbrOfFloor; ++j)
+                for (int j = 0; j < 1.5f * nbr / nbrOfFloor; ++j)
                 {
                     Vector3 pos = new Vector3(UnityEngine.Random.Range(this.xMin, this.xMax), floors[i].renderer.bounds.max.y + 0.110f, 0.0f);
                     instance = Instantiate(CrowdAgent, pos, Quaternion.identity) as GameObject;
