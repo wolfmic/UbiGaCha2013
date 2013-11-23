@@ -4,7 +4,6 @@ using System.Collections;
 public class Customization : MonoBehaviour {
 
     public Sprite cust1;
-    int count = 0;
     GameObject world;
 	// Use this for initialization
 	void Start () {

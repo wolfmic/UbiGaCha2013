@@ -5,14 +5,10 @@ using System.Collections.Generic;
 public class GameVariables : MonoBehaviour {
 	
 	public int maxNbrEnemies = 10;
-	int currentNbrEnemies = 10;
-	public int ratioLvl0Enemies = 10, ratioLvl1Enemies,ratioLvl2Enemies, ratioLvl3Enemies,ratioLvl4Enemies;
-	int toDelete = 0;
-	int nbrFloor = 5, ratioLvlEnemies;
+	public int[] ratiosLvlEnemies;
 	GameObject player;
 	GameObject[] enemies, floors;
-	public GameObject CrowdAgent, instance;
-	
+
 	public Sprite custom1;
 	public Sprite custom2;
 	public Sprite custom3;
@@ -25,31 +21,24 @@ public class GameVariables : MonoBehaviour {
 	void Start()
 	{
 		floors = GameObject.FindGameObjectsWithTag("Floor");
+		player = GameObject.FindGameObjectWithTag("Player");
 	}
 	
 	void Update()
 	{
-		player = GameObject.FindGameObjectWithTag("Player");
+		int ratioLvlEnemies;
+
 		enemies = GameObject.FindGameObjectsWithTag("Enemies");
+		ratioLvlEnemies = this.ratiosLvlEnemies[this.player.GetComponent<PlayerControl>().level - 1];
+
+		if (this.maxNbrEnemies < this.player.GetComponent<PlayerControl>().level * ratioLvlEnemies)
+			AddEnemies(ratioLvlEnemies);
 		
-		switch(player.GetComponent<PlayerControl>().level)
-		{
-		case 1: ratioLvlEnemies = ratioLvl0Enemies; break;
-		case 2: ratioLvlEnemies = ratioLvl1Enemies; break;
-		case 3: ratioLvlEnemies = ratioLvl2Enemies; break;
-		case 4: ratioLvlEnemies = ratioLvl3Enemies; break;
-		case 5: ratioLvlEnemies = ratioLvl4Enemies; break;
-		}
-		
-		if (this.maxNbrEnemies < player.GetComponent<PlayerControl>().level * ratioLvlEnemies)
-			AddEnemies();
-		
-		if (this.maxNbrEnemies > player.GetComponent<PlayerControl>().level * ratioLvlEnemies)
-			DeleteEnemies();
-		
+		if (this.maxNbrEnemies > this.player.GetComponent<PlayerControl>().level * ratioLvlEnemies)
+			DeleteEnemies(ratioLvlEnemies);
 	}
-	
-	void DeleteEnemies()
+
+	void DeleteEnemies(int ratioLvlEnemies)
 	{
 		List<int> toDelete = new List<int>();
 		List<int> invisibleFloor = new List<int>();
@@ -67,23 +56,20 @@ public class GameVariables : MonoBehaviour {
 			
 		}
 		
-		Debug.Log(invisibleFloor.Count);
+		Debug.Log("NbInvisible floors : " + invisibleFloor.Count);
 		nbrPerFloor = nbrDel/invisibleFloor.Count;
 		
 		for (int i = 0; i < invisibleFloor.Count; i++ )
 		{
 			countDel = 0;
 			
-			for (int j = 0; j < maxNbrEnemies; j++)
+			for (int j = 0; j < maxNbrEnemies && countDel < nbrPerFloor; j++)
 			{
 				if ((enemies[j].GetComponent<AgentBehavior>().floor == invisibleFloor[i]))
 				{
 					toDelete.Add(j);
 					countDel++;
 				}
-				
-				if (countDel >= nbrPerFloor)
-					j = maxNbrEnemies + 1;
 			}
 		}
 		
@@ -94,18 +80,30 @@ public class GameVariables : MonoBehaviour {
 		
 		maxNbrEnemies = player.GetComponent<PlayerControl>().level * ratioLvlEnemies;
 		GameObject[] pouet = GameObject.FindGameObjectsWithTag("Enemies");
-		Debug.Log(pouet.Length);
+		Debug.Log("NbEnemies after delete : " + pouet.Length);
 		
 	}
 	
-	void AddEnemies()
+	void AddEnemies(int ratioLvlEnemies)
 	{
-		int nbrAdd = player.GetComponent<PlayerControl>().level * ratioLvlEnemies - maxNbrEnemies;
-		floors[player.GetComponent<PlayerControl>().floor].GetComponent<FloorClass>().spawnable = false;
+		bool playerFloorState;
+		int nbrAdd;
+		FloorClass playerFloor;
+
+		Debug.Log("AddEnemies()");
+		// compute nbr entities to spawn
+		nbrAdd = player.GetComponent<PlayerControl>().level * ratioLvlEnemies - maxNbrEnemies;
+		// save floor state
+		playerFloor = floors[player.GetComponent<PlayerControl>().floor].GetComponent<FloorClass>();
+		playerFloorState = playerFloor.spawnable;
+		// disable spawn on player's floor
+		 playerFloor.spawnable = false;
+		// spawn entities
 		GameObject.FindGameObjectWithTag("World").GetComponent<AgentSpawn>().Spawn(nbrAdd);
+		// restore player's floor state
+		playerFloor.spawnable = playerFloorState;
 		
-		maxNbrEnemies = player.GetComponent<PlayerControl>().level * ratioLvlEnemies;
-		
+		this.maxNbrEnemies = this.player.GetComponent<PlayerControl>().level * ratioLvlEnemies;
 	}
 	
 	

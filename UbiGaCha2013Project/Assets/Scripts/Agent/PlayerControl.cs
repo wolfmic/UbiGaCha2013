@@ -64,8 +64,8 @@ public class PlayerControl : MonoBehaviour {
     private GameObject[] floors;
     private GameObject world;
 
-    private bool freeze = false;
-    public bool levelClear = false;
+    private bool _freeze = false;
+    private bool _levelCleared = false;
 
     private PlayerMovementAnimator _movementAnimator;
     private GameObject _carillon;
@@ -101,18 +101,17 @@ public class PlayerControl : MonoBehaviour {
 			Application.LoadLevel(Application.loadedLevelName);
 		}
 
-		Debug.Log(this.velocity);
 		if (this.velocity < 0.22f) {
 			_timeElapsedWhileStopped += Time.deltaTime;
 			if (_timeElapsedWhileStopped > 2f) {
-				this.freeze = true;
+				_freeze = true;
 				Application.LoadLevel(Application.loadedLevelName);
 			}
 		} else {
 			_timeElapsedWhileStopped = 0f;
 		}
 
-        if (this.freeze == false) {
+        if (_freeze == false) {
             if (onFloor == true) {
                 this.transform.Translate(Input.GetAxis("Horizontal") * -Vector3.left * velocity * Time.deltaTime);
             }
@@ -122,15 +121,12 @@ public class PlayerControl : MonoBehaviour {
                 this.transform.Translate(Input.GetAxis("Vertical") * direction * velocity * Time.deltaTime);
             }
 
-            if (_carillon != null && Input.GetKeyDown("e")) {
+            if (_carillon != null && _levelCleared == false && Input.GetKeyDown("e")) {
                 this.RingCarillon();
             }
 
             if (Input.GetButtonDown("Jump") && _isBellOnCooldown == false)
                 UseBellSkill();
-
-            if (Input.GetKeyDown("a"))
-                ChangeSkin();
 
             _movementAnimator.Update(this.transform.position);
         }
@@ -140,7 +136,7 @@ public class PlayerControl : MonoBehaviour {
         PlayerAnimationEventHandler playerAnimationEventHandler;
 
         playerAnimationEventHandler = this.GetComponentInChildren<PlayerAnimationEventHandler>();
-        this.freeze = true;
+        _freeze = true;
         _movementAnimator.Animator.SetTrigger("HitCarillon");
         playerAnimationEventHandler.CarillonHitHandler = this.OnCarillonHit;
         playerAnimationEventHandler.HammerDroppedEventHandler = this.OnHammerDropped;
@@ -153,14 +149,14 @@ public class PlayerControl : MonoBehaviour {
     void OnHammerDropped() {
 		BellBehaviour bell = _carillon.GetComponent<BellBehaviour>();
 
-        this.freeze = false;
+        _freeze = false;
         // check we hit the right bell
         if (bell.Rank == _rank) {
             // rank up
             _rank += 1;
             _musicPlayer.Next();
 			if (bell.LastBell) {
-				this.SetLastBell(true);
+				_levelCleared = true;
 				_door.Open();
 			}
             // TODO: increase difficulty
@@ -270,11 +266,11 @@ public class PlayerControl : MonoBehaviour {
 		PlayerAnimationEventHandler playerAnimationEventHandler;
 		
 		playerAnimationEventHandler = this.GetComponentInChildren<PlayerAnimationEventHandler>();
-		_movementAnimator.Animator.SetTrigger("Idle");
+		_movementAnimator.Update(this.transform.position);
 		_movementAnimator.Animator.SetTrigger("RingBell");
 		playerAnimationEventHandler.BellRingHandler = this.OnBellRing;
 		playerAnimationEventHandler.BellRingTerminatedHandler = this.OnBellRingTerminated;
-		this.freeze = true;
+		_freeze = true;
 	}
 
 	void OnBellRing()
@@ -297,30 +293,9 @@ public class PlayerControl : MonoBehaviour {
 
 	void OnBellRingTerminated()
 	{
-		this.freeze = false;
+		_freeze = false;
 	}
-
-    void SetFreeze(bool activation)
-    {
-        freeze = activation;
-    }
-
-    void SetLastBell(bool b)
-    {
-        if (b)
-        {
-            levelClear = true;
-            GameObject[] bells = GameObject.FindGameObjectsWithTag("Bell");
-            foreach (GameObject bell in bells)
-            {
-				BellBehaviour bellBehaviour = bell.GetComponent<BellBehaviour>();
-				if (bellBehaviour != null)
-                	bellBehaviour.SetLevelClear();
-            }
-        }
-    }
-
-
+	
     void SetRank(int i)
     {
         if (level == i)

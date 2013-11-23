@@ -5,7 +5,6 @@ public class BellBehaviour : MonoBehaviour {
 
 	public bool LastBell;
 	public int Rank;
-	private bool _levelClear = false;
     private MusicMaster _musicMaster;
 
 	// Use this for initialization
@@ -22,7 +21,4 @@ public class BellBehaviour : MonoBehaviour {
         _musicMaster.PlayDucking(this.audio);
     }
 	
-	public void SetLevelClear() {
-		_levelClear = true;
-	}
 }
